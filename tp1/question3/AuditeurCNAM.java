@@ -32,56 +32,25 @@ public class AuditeurCNAM {
         this.matricule = matricule;
     }
 
-    /**
-     * le login au Cnam : 6 premières lettres du nom suivies de la première
-     * lettre du prénom séparées de '_' . le login retourné est en minuscules,
-     * le trait d'union, ou spéciaux <i>(pour unix)</i> sont remplacés par des
-     * '_' pas de caractères accentués pour le login voir les classes
-     * prédéfines, java.lang.String : les méthodes replaceAll, toLowerCase et
-     * substring java.lang.Math : la méthode min<br>
-     * <b>BlueJ : Menu Aide</b>
-     * 
-     * @return le login du Cnam simplifié, sans les adaptations dues aux
-     *         homonymes...
-     */
     public String login() {
-        return "";// à compléter
+        nom = nom.substring(0, 6);
+        char prenomFirstChar = prenom.charAt(0);
+        String login = nom + "_" + prenomFirstChar;
+        return login.toLowerCase();
     }
 
-    /**
-     * Lecture du nom de l'auditeur.
-     * 
-     * @return son nom
-     */
-    public String nom() {
-        return null;// à compléter
+     public String nom() {
+        return this.nom;
     }
 
-    /**
-     * Lecture du prénom de l'auditeur.
-     * 
-     * @return son prénom
-     */
     public String prenom() {
-        return null;// à compléter
+        return this.prenom;
     }
 
-    /**
-     * Lecture du matricule de l'auditeur.
-     * 
-     * @return son matricule
-     */
     public String matricule() {
-        return null;// à compléter
+        return this.matricule;
     }
 
-    /**
-     * méthode toString ( méthode redéfinie de la classe Object).
-     * 
-     * @return la concaténation du nom, du prénom et du login, selon cette
-     *         syntaxe
-     *         <code>nom() + " " + prenom() +  " login : " + login()</code>
-     */
     @Override
     public String toString() {
         return nom() + " " + prenom() + " login : " + login();

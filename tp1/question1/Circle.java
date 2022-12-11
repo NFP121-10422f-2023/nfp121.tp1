@@ -13,7 +13,7 @@ import java.awt.geom.*;
 public class Circle {
     private int diameter;
     private int xPosition;
-    private int yPosition;
+    public int yPosition;
     private String color;
     private boolean isVisible;
 
@@ -149,7 +149,7 @@ public class Circle {
     /*
      * Draw the circle with current specifications on screen.
      */
-    private void draw() {
+    public void draw() {
         if (isVisible) {
             Canvas canvas = Canvas.getCanvas();
             canvas.draw(this, color, new Ellipse2D.Double(xPosition, yPosition,
